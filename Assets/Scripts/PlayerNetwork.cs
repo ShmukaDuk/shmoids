@@ -5,20 +5,23 @@ using UnityEngine;
 
 public class PlayerNetwork : NetworkBehaviour
 {
+    public Animator animator;
     public CharacterController2D controller;
-    float horizontal_move = 0;
-    float vertical_move = 0;
+    Vector2 movement;
     private void Update()
     {
         if (!IsOwner) return;
-        horizontal_move = Input.GetAxisRaw("Horizontal");
-        vertical_move = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
         
     }
     private  void FixedUpdate()
     {
         if (!IsOwner) return;
-        controller.Move(horizontal_move * 30 * Time.fixedDeltaTime, vertical_move * 30 * Time.fixedDeltaTime, false);
+        controller.Move(movement.x * 30 * Time.fixedDeltaTime, movement.y * 30 * Time.fixedDeltaTime, false);
 
     }
 }
