@@ -18,7 +18,7 @@ public class PlayerNetwork : NetworkBehaviour
     private  void FixedUpdate()
     {
         if (!IsOwner) return;
-        controller.Move(horizontal_move * 30 * Time.fixedDeltaTime, vertical_move * Time.fixedDeltaTime, false);
+        controller.Move(horizontal_move * 30 * Time.fixedDeltaTime, vertical_move * 30 * Time.fixedDeltaTime, false);
 
     }
 }
