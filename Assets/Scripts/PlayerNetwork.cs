@@ -13,10 +13,12 @@ public class PlayerNetwork : NetworkBehaviour
         if (!IsOwner) return;
         horizontal_move = Input.GetAxisRaw("Horizontal");
         vertical_move = Input.GetAxisRaw("Vertical");
+        
     }
     private  void FixedUpdate()
     {
         if (!IsOwner) return;
-        controller.Move(horizontal_move * Time.fixedDeltaTime, vertical_move * Time.fixedDeltaTime, false);
+        controller.Move(horizontal_move * 30 * Time.fixedDeltaTime, vertical_move * Time.fixedDeltaTime, false);
+
     }
 }
