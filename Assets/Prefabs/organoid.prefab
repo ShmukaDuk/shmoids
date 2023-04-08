@@ -192,9 +192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DashForce: 30
+  m_DashDuration: 0.05
   m_MovementSmoothing: 0.05
   isDashing: 0
-  spellController: {fileID: 7725198242243733491}
 --- !u!50 &5521172975405447175
 Rigidbody2D:
   serializedVersion: 4
@@ -343,7 +343,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -364,10 +364,10 @@ TrailRenderer:
   m_SortingLayerID: -84503509
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Time: 2.87
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.34568575
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -385,7 +385,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.24951048, g: 0.50897944, b: 0.5943396, a: 1}
+      key0: {r: 0.32280168, g: 0.72292167, b: 0.735849, a: 1}
       key1: {r: 0.24951048, g: 0.50897944, b: 0.5943396, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -393,8 +393,8 @@ TrailRenderer:
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
+      ctime0: 34888
+      ctime1: 42983
       ctime2: 0
       ctime3: 0
       ctime4: 0
@@ -409,7 +409,7 @@ TrailRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
+      m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -433,7 +433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45b0e9b861839e41ba2f0723bfa21f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CoolDownDash: 0.05
+  CoolDownDash: 2
+  currCooldownDash: 0
+  canDash: 1
 --- !u!1 &7567217596563631068
 GameObject:
   m_ObjectHideFlags: 0

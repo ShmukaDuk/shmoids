@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpellController : MonoBehaviour
 {
+    //dash
     [Range(0, 10f)] [SerializeField] private float CoolDownDash = 2f;
     public float currCooldownDash;
 

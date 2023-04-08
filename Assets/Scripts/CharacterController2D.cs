@@ -7,6 +7,7 @@ public class CharacterController2D : MonoBehaviour
 {
 	private Rigidbody2D m_Rigidbody2D;
 	private SpellController spellController;
+	private TrailRenderer trailRenderer;
 
 	private Vector3 m_Velocity = Vector3.zero;
 
@@ -22,6 +23,9 @@ public class CharacterController2D : MonoBehaviour
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 		spellController = GetComponent<SpellController>();
+		trailRenderer = GetComponent<TrailRenderer>();
+		trailRenderer.emitting = false;
+
 	}
 
 	public void Move(float horizontal, float vertical)
@@ -35,9 +39,12 @@ public class CharacterController2D : MonoBehaviour
 		if (spellController.getCanDash())
         {
 			isDashing = true;
+			trailRenderer.emitting = true;
 			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x * m_DashForce, m_Rigidbody2D.velocity.y * m_DashForce);
 			spellController.dash();
 			yield return new WaitForSeconds(m_DashDuration);
+			trailRenderer.emitting = false;
+
 			isDashing = false;
 		}
     }
