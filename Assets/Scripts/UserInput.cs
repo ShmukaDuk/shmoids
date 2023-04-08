@@ -17,6 +17,6 @@ public class UserInput : MonoBehaviour
     }
     void FixedUpdate()
     {
-        controller.Move(horizontal_move * Time.fixedDeltaTime, vertical_move * Time.fixedDeltaTime, false);
+        controller.Move(horizontal_move * Time.fixedDeltaTime, vertical_move * Time.fixedDeltaTime);
     }
 }

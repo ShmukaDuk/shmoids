@@ -11,7 +11,11 @@ TagManager:
   - 
   - Water
   - UI
+  - Ground_low
+  - Ground_mid
+  - Ground_high
   - Player
+  - PlayerVFX
   - 
   - 
   - 
@@ -21,11 +25,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - UI_Buttons
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground_low
+    uniqueID: 3022468553
+    locked: 0
+  - name: Player
+    uniqueID: 4048077707
+    locked: 0
+  - name: Player_VFX
+    uniqueID: 4210463787
+    locked: 0
+  - name: Ground2
+    uniqueID: 1268101135
     locked: 0
