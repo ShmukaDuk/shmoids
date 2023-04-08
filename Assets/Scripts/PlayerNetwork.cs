@@ -8,6 +8,7 @@ public class PlayerNetwork : NetworkBehaviour
     public Animator animator;
     public CharacterController2D controller;
     Vector2 movement;
+
     private void Update()
     {
         if (!IsOwner) return;
@@ -16,12 +17,17 @@ public class PlayerNetwork : NetworkBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        
+
+        //dash
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(controller.Dash());
+        }
+
     }
-    private  void FixedUpdate()
+    private void FixedUpdate()
     {
         if (!IsOwner) return;
-        controller.Move(movement.x * 30 * Time.fixedDeltaTime, movement.y * 30 * Time.fixedDeltaTime, false);
-
+        controller.Move(movement.x * 30 * Time.fixedDeltaTime, movement.y * 30 * Time.fixedDeltaTime);
     }
 }
